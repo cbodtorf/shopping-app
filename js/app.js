@@ -44,5 +44,6 @@ require('./controllers/basket.controller')(app)
 * Servcies
 */
 require('./services/inventory.service')(app)
+require('./services/basket.service')(app)
 
 })();

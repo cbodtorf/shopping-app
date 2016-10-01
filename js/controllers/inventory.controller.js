@@ -1,14 +1,17 @@
 /**
 * InventoryController
 * --- *
-*
-* Caleb Bodtorf
-* 9-29-2016
 */
 
 module.exports = function(app){
-  app.controller('InventoryController', ['$scope', 'InventoryService', function($scope, InventoryService){
+
+  app.controller('InventoryController', ['$scope', 'InventoryService', 'BasketService', function($scope, InventoryService, BasketService){
     $scope.inventory = InventoryService.getInventory()
 
+    $scope.addToBasket = function(item) {
+      BasketService.addItem(item)
+    }
+
   }])
+
 }

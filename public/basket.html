@@ -1,3 +1,12 @@
 <section>
   <h1>Basket</h1>
+
+  <ul class="basket">
+    <li ng-repeat="item in basket">
+      <span>title: <span class="item-text">{{ item.title }}</span></span><br />
+      <span>price: <span class="item-text">{{ item.price | currency : "$" : 2 }}</span></span><br />
+      <span>qty: <span class="item-text">{{ item.basketQty }}</span></span><br />
+      <button type="button" name="deleteItem" ng-click="deleteItem(item)">delete</button>
+    </li>
+  </ul>
 </section>

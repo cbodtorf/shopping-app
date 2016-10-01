@@ -1,0 +1,13 @@
+header {
+  text-align: center; }
+
+.item-text {
+  font-weight: bold; }
+
+ul {
+  width: 90%;
+  padding: 0;
+  list-style: none;
+  display: inline-flex;
+  justify-content: space-around;
+  margin: 10px; }

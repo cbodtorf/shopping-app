@@ -3,9 +3,10 @@
 
   <ul class="inventory">
     <li ng-repeat="item in inventory">
-      <span>title: {{ item.title }}</span><br />
-      <span>price: ${{ item.price }}</span><br />
-      <span>qty: {{ item.quantity }}</span><br />
+      <span>title: <span class="item-text">{{ item.title }}</span></span><br />
+      <span>price: <span class="item-text">{{ item.price | currency : "$" : 2 }}</span></span><br />
+      <span>qty: <span class="item-text">{{ item.quantity }}</span></span><br />
+      <button type="button" name="addToBasket" ng-click="addToBasket(item)">add to basket</button>
     </li>
   </ul>
 </section>
