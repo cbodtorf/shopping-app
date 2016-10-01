@@ -17,6 +17,24 @@ module.exports = function(app){
     $scope.deleteItem = function(item) {
       BasketService.deleteItem(item)
     }
+
+    /**
+    * Deletes item from basket.
+    * --- *
+    * @param {Object} item: from basket.
+    */
+    $scope.more = function(item) {
+      BasketService.addItem(item)
+    }
+
+    /**
+    * Deletes item from basket.
+    * --- *
+    * @param {Object} item: from basket.
+    */
+    $scope.less = function(item) {
+      BasketService.decreaseQuantity(item)
+    }
   }])
 
 }
@@ -139,6 +157,7 @@ module.exports = function(app){
       * Returns items in basket.
       */
       getBasket() {
+
         return basket
       },
 
@@ -182,6 +201,34 @@ module.exports = function(app){
           item.quantity += item.basketQty
         }
       },
+
+      /**
+      * Decrease item quantity.
+      * --- *
+      * @param {Object} item: from basket
+      */
+      decreaseQuantity(item) {
+        // Makes sure we have at least 1.
+        if (item.basketQty > 1) {
+          item.basketQty --
+          // Returns items to inventory.
+          item.quantity ++
+        }
+      },
+
+      // /**
+      // * Increase item quantity.
+      // * --- *
+      // * @param {Object} item: from basket
+      // */
+      // increaseQuantity(item) {
+      //   // Makes sure we have at least 1.
+      //   if (item.basketQty > 1) {
+      //     item.basketQty --
+      //     // Returns items to inventory.
+      //     item.quantity += item.basketQty
+      //   }
+      // },
     }
 
   }])

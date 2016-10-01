@@ -2,3 +2,22 @@
 header {
   text-align: center;
 }
+
+// INVENTORY/BASKET
+.item-text {
+  font-weight: bold;
+}
+
+ul {
+  width: 90%;
+  padding: 0;
+  list-style: none;
+  display: inline-flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 10px;
+
+  li {
+    margin: 5px;
+  }
+}

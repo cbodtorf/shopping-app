@@ -16,6 +16,24 @@ module.exports = function(app){
     $scope.deleteItem = function(item) {
       BasketService.deleteItem(item)
     }
+
+    /**
+    * Deletes item from basket.
+    * --- *
+    * @param {Object} item: from basket.
+    */
+    $scope.more = function(item) {
+      BasketService.addItem(item)
+    }
+
+    /**
+    * Deletes item from basket.
+    * --- *
+    * @param {Object} item: from basket.
+    */
+    $scope.less = function(item) {
+      BasketService.decreaseQuantity(item)
+    }
   }])
 
 }
