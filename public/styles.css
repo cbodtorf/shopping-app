@@ -1,6 +1,19 @@
 header {
   text-align: center; }
 
+.input-field {
+  width: 300px;
+  font-size: 1em;
+  line-height: 1.3em;
+  border: 2.5px solid;
+  border-radius: 5px;
+  outline: #121212;
+  margin: 5px; }
+
+.form p {
+  margin: 0;
+  margin-left: 20px; }
+
 .item-text {
   font-weight: bold; }
 

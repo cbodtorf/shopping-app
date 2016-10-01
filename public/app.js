@@ -9,6 +9,11 @@ module.exports = function(app){
   app.controller('BasketController', ['$scope', 'BasketService', function($scope, BasketService){
     $scope.basket = BasketService.getBasket();
 
+    /**
+    * Deletes item from basket.
+    * --- *
+    * @param {Object} item: from basket.
+    */
     $scope.deleteItem = function(item) {
       BasketService.deleteItem(item)
     }
@@ -27,8 +32,24 @@ module.exports = function(app){
   app.controller('FormController', ['$scope', 'InventoryService', function($scope, InventoryService){
     $scope.inventory = InventoryService.getInventory()
 
+    /**
+    * Adds item to inventory.
+    * --- *
+    * @param {Object} item: key/values from form.
+    */
     $scope.add = function(item) {
-      InventoryService.addItem(item)
+      // validates fields
+      if ($scope.form.$valid) {
+        InventoryService.addItem(item)
+
+        /**
+        * Reset form values
+        */
+        let inputs = Array.from(document.querySelectorAll('.input-field'))
+        inputs.forEach(function(el){
+          el.value = '';
+        })
+      }
     }
 
   }])
@@ -46,6 +67,11 @@ module.exports = function(app){
   app.controller('InventoryController', ['$scope', 'InventoryService', 'BasketService', function($scope, InventoryService, BasketService){
     $scope.inventory = InventoryService.getInventory()
 
+    /**
+    * Adds item to basket.
+    * --- *
+    * @param {Object} item: from inventory.
+    */
     $scope.addToBasket = function(item) {
       BasketService.addItem(item)
     }
@@ -105,20 +131,32 @@ module.exports = function(app){
 
 module.exports = function(app){
 
-  app.factory('BasketService', ['$http', function($http){
+  app.factory('BasketService', [function(){
     let basket = [];
 
     return {
+      /**
+      * Returns items in basket.
+      */
       getBasket() {
         return basket
       },
 
+      /**
+      * Adds item to basket.
+      * --- *
+      * @param {Object} item: from inventory
+      */
       addItem(item) {
+
+        // Validates inventory quantity
         if (item.quantity === 0) {
           console.log("sold out");
         } else {
+          // Decrements inventory quantity.
           item.quantity -= 1
 
+          // Checks for duplicate items. Then increments basketQty.
           if (basket.indexOf(item) === -1) {
             basket.push(item)
             item.basketQty = 1
@@ -128,11 +166,19 @@ module.exports = function(app){
       }
       },
 
+      /**
+      * Deletes item to basket.
+      * Makes sure we are deleting correct item.
+      * --- *
+      * @param {Object} item: from basket
+      */
       deleteItem(item) {
         let index = basket.indexOf(item)
 
         if (index > -1) {
           basket.splice(index, 1)
+
+          // Returns items to inventory.
           item.quantity += item.basketQty
         }
       },
@@ -152,19 +198,19 @@ module.exports = function(app){
 
   app.factory('InventoryService', ['$http', function($http){
     let inventory = [
-                      {id: 1,
+                      {
                       title: "banana",
                       price: 1.19,
                       quantity: 21,
                     },
-                      {id: 2,
+                      {
                       title: "avocado",
                       price: 3.09,
                       quantity: 2,
                     },
-                      {id: 3,
+                      {
                       title: "juice",
-                      price: 5.60,
+                      price: 5.6,
                       quantity: 4,
                     },
                   ];
@@ -174,6 +220,11 @@ module.exports = function(app){
         return inventory
       },
 
+      /**
+      * Adds item to inventory.
+      * --- *
+      * @param {Object} item: from form.
+      */
       addItem(item) {
         inventory.push(item)
       },

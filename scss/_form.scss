@@ -1,0 +1,16 @@
+.input-field {
+  width: 300px;
+  font-size: 1em;
+  line-height: 1.3em;
+  border: $border;
+  border-radius: $bRad;
+  outline: $black;
+  margin: 5px;
+}
+
+.form {
+  p {
+    margin: 0;
+    margin-left: 20px;
+  }
+}
