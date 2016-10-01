@@ -1,11 +1,18 @@
 .input-field {
+  box-sizing: border-box;
   width: 300px;
   font-size: 1em;
-  line-height: 1.3em;
-  border: $border;
+  box-shadow: inset 2px 2px 5px rgba(0,0,0,0.2);
+  line-height: 1.5em;
+  border: $border $grey;
   border-radius: $bRad;
   outline: $black;
   margin: 5px;
+  padding-left: 10px;
+  &:focus {
+    border-color: palette(ui, success);
+    box-shadow: 0px 0px 2px 0.5px palette(ui, successShadow);
+  }
 }
 
 .form {

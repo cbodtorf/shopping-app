@@ -2,13 +2,19 @@ header {
   text-align: center; }
 
 .input-field {
+  box-sizing: border-box;
   width: 300px;
   font-size: 1em;
-  line-height: 1.3em;
-  border: 2.5px solid;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2);
+  line-height: 1.5em;
+  border: 0.3px solid lightslategray;
   border-radius: 5px;
   outline: #121212;
-  margin: 5px; }
+  margin: 5px;
+  padding-left: 10px; }
+  .input-field:focus {
+    border-color: #66afe9;
+    box-shadow: 0px 0px 2px 0.5px rgba(102, 175, 233, 0.6); }
 
 .form p {
   margin: 0;

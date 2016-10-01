@@ -17,7 +17,7 @@ $font-weight--bold  : 700;
 $font-weight--bolder: 900;
 
 // Border
-$border: 2.5px solid;
+$border: 0.3px solid;
 $bRad: 5px;
 
 
@@ -41,7 +41,7 @@ $color-teritiary: $drifwood;
 $color-accent: $tamarillo;
 $color-shadow: $amethystSmoke;
 
-//  COLOR-PALETTE MODIFIERS _ex._ color: palette(grey, x-dark);
+//  COLOR-PALETTE MODIFIERS _ex._ color: palette($ui-colors, grey, x-dark);
 
 $palettes: (
   grey: (
@@ -58,16 +58,15 @@ $palettes: (
     dark: darken($black, 8%),
     x-dark: darken($black, 16%)
   ),
+  ui: (
+    default: $white,
+    success: #66afe9,
+    successShadow: rgba(102,175,233,0.6),
+    warning: $tamarillo,
+    error: $tamarillo,
+  ),
 );
 
-// UI COLORS
-
-$ui-colors: (
-  default: $white,
-  success: lightblue,
-  warning: $tamarillo,
-  error: $tamarillo,
-);
 
 //  TEXT
 $base__font-size: 16px;
