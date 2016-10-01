@@ -1,0 +1,11 @@
+<section>
+  <h1>Inventory</h1>
+
+  <ul class="inventory">
+    <li ng-repeat="item in inventory">
+      <span>title: {{ item.title }}</span><br />
+      <span>price: ${{ item.price }}</span><br />
+      <span>qty: {{ item.quantity }}</span><br />
+    </li>
+  </ul>
+</section>

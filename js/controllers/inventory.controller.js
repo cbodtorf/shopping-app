@@ -7,9 +7,8 @@
 */
 
 module.exports = function(app){
-  app.controller('InventoryController', ['$scope', function($scope){
-
-
+  app.controller('InventoryController', ['$scope', 'InventoryService', function($scope, InventoryService){
+    $scope.inventory = InventoryService.getInventory()
 
   }])
 }
