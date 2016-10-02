@@ -128,7 +128,8 @@ module.exports = function(app){
       templateUrl: 'basket.html',
       controller: 'BasketController'
     }).otherwise({
-      redirectTo: '/404'
+      redirectTo: '/404',
+      templateUrl: '404.html'
     });
   }]);
 

@@ -30,6 +30,7 @@ var app = angular.module('myApp', ['ngRoute'])
     })
     .otherwise({
       redirectTo: '/404',
+      templateUrl: '404.html',
     })
 }])
 
