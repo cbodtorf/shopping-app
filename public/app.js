@@ -117,7 +117,7 @@ module.exports = function(app){
 
   var app = angular.module('myApp', ['ngRoute']).config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when('/', {
-      templateUrl: 'home.html'
+      redirectTo: '/inventory'
     }).when('/inventory', {
       templateUrl: 'inventory.html',
       controller: 'InventoryController'
