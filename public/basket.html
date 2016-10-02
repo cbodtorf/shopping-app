@@ -2,6 +2,7 @@
   <h2>Basket</h2>
 
   <ul class="basket">
+    <h4 ng-show="!basket.length"><a href="#/inventory">You know you want to add some stuff?</a></h4>
     <li ng-repeat="item in basket">
       <img ng-src="{{ item.imgUrl }}" alt="" /><br />
       <span>title: <span class="item-text">{{ item.title }}</span></span><br />
