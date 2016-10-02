@@ -6,11 +6,12 @@
 - 1. A form to add new products to a "shop"
 - 2. A list that represents products in the shop
 - 3. A subset list of selected items from the shop  
+
 ---------------
 
 This App requires [Node.js](https://nodejs.org/) v4+ to run.  
 or  
-you can visit cbodtorf.shop.surge.sh.
+you can visit cbodtorf.shop.surge.sh.  
 _1. Clone Repo:
 ```sh
 $ git clone git@github.com:cbodtorf/shopping-app.git
