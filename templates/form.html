@@ -15,7 +15,7 @@
 
     <!-- IMG URL -->
     <input class="input-field" type="text" name="imgUrl" ng-model="item.imgUrl" placeholder="image Url (optional)"><br />
-    <p ng-show="form.quantity.$invalid && !form.quantity.$pristine" class="help-block">Image is required.</p><br />
+    <p ng-show="form.imgUrl.$invalid && !form.quantity.$pristine" class="help-block">Image is required.</p><br />
 
     <!-- SUBMIT -->
     <button ng-disabled="form.$invalid" type="submit" ng-click="add(item)">Add</button>
