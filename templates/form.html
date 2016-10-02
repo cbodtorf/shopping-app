@@ -2,20 +2,32 @@
   <h2>Form</h2>
   <form name="form" class="form" novalidate>
     <!-- TITLE -->
-    <input class="input-field" type="text" name="title" ng-model="item.title" placeholder="title" required><br />
-    <p ng-show="form.title.$invalid && !form.title.$pristine" class="help-block">Title is required.</p><br />
+    <input class="input-field" ng-minlength="3" ng-maxlength="20" type="text" name="title" ng-model="item.title" placeholder="title" required><br />
+    <div class="help-block">
+      <p ng-show="form.title.$invalid && form.title.$dirty" >Title is required. </p>
+      <p ng-show="form.title.$error.minlength" >Title is too short. </p>
+      <p ng-show="form.title.$error.maxlength" >Title is too long. </p>
+    </div><br />
 
     <!-- PRICE -->
-    <input class="input-field" type="number" min="0" max="9999"name="price" ng-model="item.price" placeholder="price" required><br />
-    <p ng-show="form.price.$invalid && !form.price.$pristine" class="help-block">Price is required.</p><br />
+    <input class="input-field" type="number" ng-min="0" ng-max="9999"name="price" ng-model="item.price" placeholder="price" required><br />
+    <div class="help-block">
+      <p ng-show="form.price.$invalid && form.price.$dirty" >Price is required. </p>
+      <p ng-show="form.price.$error.min" >Price is too low. </p>
+      <p ng-show="form.price.$error.max" >Price is too high. </p>
+    </div><br />
 
     <!-- QUANTITY -->
-    <input class="input-field" type="number" min="0" max="999" name="quantity" ng-model="item.quantity" placeholder="quantity" required><br />
-    <p ng-show="form.quantity.$invalid && !form.quantity.$pristine" class="help-block">Quantity is required.</p><br />
+    <input class="input-field" type="number" ng-min="0" ng-max="999" name="quantity" ng-model="item.quantity" placeholder="quantity" required><br />
+    <div class="help-block">
+      <p ng-show="form.quantity.$invalid && form.quantity.$dirty" >Quantity is required. </p>
+      <p ng-show="form.quantity.$error.min" >Quantity is too low. </p>
+      <p ng-show="form.quantity.$error.max" >Quantity is too high. </p>
+    </div><br />
 
     <!-- IMG URL -->
-    <input class="input-field" type="text" name="imgUrl" ng-model="item.imgUrl" placeholder="image Url (optional)"><br />
-    <p ng-show="form.imgUrl.$invalid && !form.quantity.$pristine" class="help-block">Image is required.</p><br />
+    <input class="input-field" ng-maxlength="100" type="text" name="imgUrl" ng-model="item.imgUrl" placeholder="image Url (optional)"><br />
+    <p ng-show="form.imgUrl.$error.maxlength" class="help-block">Image Url is too long.</p><br />
 
     <!-- SUBMIT -->
     <button ng-disabled="form.$invalid" type="submit" ng-click="add(item)">Add</button>

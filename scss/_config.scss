@@ -61,7 +61,8 @@ $palettes: (
   ui: (
     default: $white,
     success: $blue,
-    successShadow: rgba(21,132,202,0.6),
+    form: $red,
+    form-shadow: $color-shadow,
     warning: $dark-blue,
     error: $dark-red,
   ),
