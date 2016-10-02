@@ -15,7 +15,7 @@ module.exports = function(app){
     */
     $scope.add = function(item) {
       // validates fields
-      if ($scope.form.$valid) {
+      if ($scope.form.$valid && checkURL(item.imgUrl)) {
         InventoryService.addItem(item)
 
         /**
@@ -26,6 +26,10 @@ module.exports = function(app){
           el.value = '';
         })
       }
+    }
+
+    function checkURL(url) {
+      return(url.match(/\.(jpeg|jpg|gif|png)$/) != null);
     }
 
   }])

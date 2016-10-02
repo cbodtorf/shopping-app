@@ -4,24 +4,28 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Shop</title>
+    <!-- VENDOR SCRIPTS -->
     <script src="./vendor/angular.js" charset="utf-8"></script>
     <script src="./vendor/angular-route.min.js" charset="utf-8"></script>
+    <!-- STYLES -->
     <link  rel="icon" href="./assets/icon.png" media="screen" title="no title" charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Abril+Fatface|" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="/styles.css" media="screen" title="no title">
   </head>
   <body>
     <header>
       <h1>SHOP</h1>
       <nav>
-        <a href="/#/inventory">inventory</a>
-        <a href="/#/form">form</a>
-        <a href="/#/basket">basket</a>
+        <a href="/#/inventory">Inventory</a> ::
+        <a href="/#/form">Form</a> ::
+        <a href="/#/basket">Basket</a>
       </nav>
     </header>
     <main ng-view></main>
 
 
-
+    <!-- APP SCRIPTS -->
     <script type="text/javascript" src="app.js" charset="utf-8"></script>
   </body>
 </html>

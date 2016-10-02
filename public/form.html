@@ -1,19 +1,23 @@
 <section class="form-container">
-  <h1>Form</h1>
+  <h2>Form</h2>
   <form name="form" class="form" novalidate>
     <!-- TITLE -->
     <input class="input-field" type="text" name="title" ng-model="item.title" placeholder="title" required><br />
-    <p ng-show="form.title.$invalid && !form.title.$pristine" class="help-block">Item title is required.</p><br />
+    <p ng-show="form.title.$invalid && !form.title.$pristine" class="help-block">Title is required.</p><br />
 
     <!-- PRICE -->
     <input class="input-field" type="number" min="0" max="9999"name="price" ng-model="item.price" placeholder="price" required><br />
-    <p ng-show="form.price.$invalid && !form.price.$pristine" class="help-block">Item price is required.</p><br />
+    <p ng-show="form.price.$invalid && !form.price.$pristine" class="help-block">Price is required.</p><br />
 
     <!-- QUANTITY -->
     <input class="input-field" type="number" min="0" max="999" name="quantity" ng-model="item.quantity" placeholder="quantity" required><br />
-    <p ng-show="form.quantity.$invalid && !form.quantity.$pristine" class="help-block">Item quantity is required.</p><br />
+    <p ng-show="form.quantity.$invalid && !form.quantity.$pristine" class="help-block">Quantity is required.</p><br />
+
+    <!-- IMG URL -->
+    <input class="input-field" type="text" name="imgUrl" ng-model="item.imgUrl" placeholder="image Url" required><br />
+    <p ng-show="form.quantity.$invalid && !form.quantity.$pristine" class="help-block">Image is required.</p><br />
 
     <!-- SUBMIT -->
-    <input ng-disabled="form.$invalid" type="submit" ng-click="add(item)" value="Add" />
+    <button ng-disabled="form.$invalid" type="submit" ng-click="add(item)">Add</button>
   </form>
 </section>

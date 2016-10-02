@@ -1,3 +1,46 @@
+// GLOBALS
+* {
+  font-size: 16px;
+  font-family: $font-family--primary;
+}
+html {
+  -webkit-font-smoothing: antialiased;
+  background-color: $grey;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+body {
+  width: 95%;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow-x: hidden;
+  margin: 0 auto;
+  display: block;
+  background-color: $white;
+  box-sizing: border-box;
+  box-shadow: -2px 2px 2px rgba(0,0,0,0.2);
+}
+h2 {
+  font-size: 1.5em;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+}
+
+a {
+  text-decoration: none;
+  color: $black;
+  &:visited {
+    color: $black;
+  }
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+
 // HEADER
 header {
   text-align: center;
@@ -19,5 +62,26 @@ ul {
 
   li {
     margin: 5px;
+  }
+}
+
+// BUTTON
+button {
+  line-height: 1.5em;
+  width: auto;
+  margin: 5px;
+  border: $border $grey;
+  border-radius: $bRad;
+  outline: $black;
+  background-color: $white;
+
+  &:hover {
+    cursor: pointer;
+    color: $color-primary;
+    border-color: $color-primary;
+    box-shadow: 0 0 1px 0.7px $color-shadow;
+  }
+  &:disabled {
+    color: $grey;
   }
 }

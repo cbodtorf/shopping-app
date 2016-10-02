@@ -4,8 +4,8 @@
 
 //  FONT STACK
 
-$font-family--primary  : 'Shrikhand', cursive;
-$font-family--secondary: 'Josefin Slab', serif;
+$font-family--primary  : 'Inconsolata', moonspace;
+$font-family--secondary: 'Abril Fatface', cursive;
 $font-family--tertiary : ;
 
 //  FONT WEIGHTS
@@ -16,30 +16,30 @@ $font-weight--medium: 400;
 $font-weight--bold  : 700;
 $font-weight--bolder: 900;
 
-// Border
+// BORDER
 $border: 0.3px solid;
 $bRad: 5px;
 
 
 //  DESCRIPTIVE BASE COLORS __ http://chir.ag/projects/name-that-color/
 
-$white: #FFFBF4;
-$black: #121212;
-$grey : lightslategray;
+$white: #FDFDFD;
+$black: #000;
+$grey : #CCCCCC;
 
-$grn: olivedrab;
-$amethyst:  #A76BCC;
-$amethystSmoke: #A99BB2;
-$drifwood:  #B29256;
-$tamarillo: #B20006;
+$red: #FD3333;
+$yellow:  #FDFB4C;
+$blue:  #1584CA;
+$dark-red: #3E0C0C;
+$dark-blue: #08314A;
 
 //  FUNCTIONAL COLORS
 
-$color-primary: $grn;
-$color-secondary: $amethyst;
-$color-teritiary: $drifwood;
-$color-accent: $tamarillo;
-$color-shadow: $amethystSmoke;
+$color-primary: $red;
+$color-secondary: $yellow;
+$color-teritiary: $blue;
+$color-accent: $dark-red;
+$color-shadow: rgba(253,51,51,0.3);
 
 //  COLOR-PALETTE MODIFIERS _ex._ color: palette($ui-colors, grey, x-dark);
 
@@ -60,10 +60,10 @@ $palettes: (
   ),
   ui: (
     default: $white,
-    success: #66afe9,
-    successShadow: rgba(102,175,233,0.6),
-    warning: $tamarillo,
-    error: $tamarillo,
+    success: $blue,
+    successShadow: rgba(21,132,202,0.6),
+    warning: $dark-blue,
+    error: $dark-red,
   ),
 );
 
