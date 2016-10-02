@@ -5,25 +5,25 @@
 ##### Create an MV* app split into three parts:
 - 1. A form to add new products to a "shop"
 - 2. A list that represents products in the shop
-- 3. A subset list of selected items from the shop
+- 3. A subset list of selected items from the shop  
 ---------------
 
 This App requires [Node.js](https://nodejs.org/) v4+ to run.  
 or  
 you can visit cbodtorf.shop.surge.sh.
-1. Clone Repo:
+_1. Clone Repo:
 ```sh
 $ git clone git@github.com:cbodtorf/shopping-app.git
 ```
-2. Change directories:
+_2. Change directories:
 ```sh
 $ cd shopping-app
 ```
-3. Install Dependencies:
+_3. Install Dependencies:
 ```sh
 $ npm install
 ```
-4. Run the server:
+_4. Run the server:
 ```sh
 $ npm run server
 ```
