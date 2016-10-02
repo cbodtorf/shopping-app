@@ -14,7 +14,7 @@ module.exports = function(app){
     * @param {Object} item: from inventory.
     */
     $scope.addToBasket = function(item) {
-      BasketService.addItem(item)
+        BasketService.addItem(item)
     }
 
   }])
