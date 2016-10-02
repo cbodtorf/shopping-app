@@ -27,10 +27,10 @@ gulp.task('css', function() {
 
 gulp.task('js', function() {
   gulp.src('./js/app.js')
+  .pipe(browserify())
   .pipe(babel({
 			presets: ['es2015']
 		}))
-  .pipe(browserify())
   .pipe(gulp.dest('./public'))
 });
 
